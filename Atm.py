@@ -1,22 +1,26 @@
-import builtins
+class ATM:
+    def __init__(self, cardNumber, pin):
+        self.cardNumber=cardNumber
+        self.pin=pin
 
+    def CheckBalance(self):
+        print("Your balance is 50,000")
 
-class atm:
-
-    def __init__(self, cardNo, pinNo):
-        self.cardNo=cardNo
-        self.pinNo=pinNo
-
-    def checkBalnce(self):
-        print("The amount you have is 97,778, Indeed you are rich!")
-
-    def withdrawl(self, cashLeft):
-        new_val=97,778-cashLeft
-        print("You have withdrawn")
-
-    def exit(self, bill):
-        print("Here is the exit bill, please come back later for withdarwing, I wont run! ")
-        print(bill)
-
-
-        
+    def whithdrawl(self, ammount):
+        new_ammount=50000-ammount
+        print("You have withdrawn"+str(ammount)+"Your remaining balance is"+str(new_ammount))
+    
+def main():
+        cardNummber=input("Card Number ")
+        pin=input("Pin ")
+        new_user=ATM(cardNummber,pin)
+        print("Choose Activity ")
+        print("1:", "2")
+        activity=int(input("Enter Activity Number "))
+        if(activity==1):
+            new_user.CheckBalance()
+        elif(activity==2):
+            ammount=int(input("Enter the ammount "))
+            new_user.whithdrawl(ammount)
+        else:
+            print("Enter a valid number.")
